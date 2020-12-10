@@ -1,10 +1,10 @@
 import java.util.*;
-import java.io.*
+import java.io.*;
 public class NoNullArrayList<T> extends ArrayList<T>{
-  public NoNullArrayList<T>() {
+  public NoNullArrayList() {
     super();
   }
-  public NoNullArrayList<T> (int size) {
+  public NoNullArrayList(int size) {
     super(size);
   }
   public T set (int index, T element) {

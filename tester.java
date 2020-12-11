@@ -2,9 +2,6 @@ import java.util.*;
 import java.io.*;
 public class tester {
   public static void main (String[] args) {
-    Integer a = 5;
-    Integer b = 3;
-    System.out.println(a.compareTo(b));
     System.out.println("testing nonullarraylist:");
     NoNullArrayList<Integer> test1 = new NoNullArrayList<Integer>();
     NoNullArrayList<Integer> test2 = new NoNullArrayList<Integer>(50);
@@ -15,7 +12,7 @@ public class tester {
       test1.add(null);
       test1.add(3);
     } catch (IllegalArgumentException e){
-      e.printStackTrace();
+      System.out.println("Correct error handling");
       for (Integer i : test1) {
         System.out.print(i + " ");
       }
@@ -28,7 +25,7 @@ public class tester {
       test2.add(1, null);
       test2.add(1, 3);
     } catch (IllegalArgumentException e) {
-      e.printStackTrace();
+      System.out.println("Correct error handling");
       for (Integer i : test2) {
         System.out.print(i+" ");
       }
@@ -39,7 +36,7 @@ public class tester {
       test.add(i);
     }
     for (Integer i = 1; i < 10; i += 2) {
-      test.add (i);
+      test.add (5, i);
     }
     for (int i = 0; i < test.size(); i++) {
       System.out.print(test.get(i) + " ");

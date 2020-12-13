@@ -42,5 +42,13 @@ public class tester {
       System.out.print(test.get(i) + " ");
     }
     System.out.println();
+    for (int i = 0; i < 10; i += 2) {
+      test.set(i, test.get(i)+10);
+    }
+    for (int i = 0; i < test.size(); i++) {
+      System.out.print(test.get(i) + " ");
+    }
+    System.out.println();
+    
   }
 }

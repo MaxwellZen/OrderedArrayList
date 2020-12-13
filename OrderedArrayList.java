@@ -8,6 +8,7 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     super(capacity);
   }
   private int index(T element) {
+    if (element==null) return 0;
     if (super.size()==0) return 0;
     if (element.compareTo(super.get(0))<0) return 0;
     int ans = 1;
@@ -26,8 +27,11 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     super.add(index(element), element);
   }
   public T set (int index, T element) {
-    T a = super.remove(index);
+    T ans = super.get(index);
+    if (element != null) {
+      super.remove(index);
+    }
     super.add(index(element), element);
-    return a;
+    return ans;
   }
 }
